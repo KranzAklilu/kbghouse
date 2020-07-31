@@ -1,0 +1,21 @@
+<div id="App">
+<form action="/" method="post">
+    <div>
+        <label for="checkin">Check-In</label>
+        <input required type="date" name="checkin" value="{{client.checkin}}" id="checkin">
+    </div><div>
+        <label for="checkout">Check-Out</label>
+        <input required type="date" name="checkout" value="{{client.checkout}}" id="checkout">
+    </div><div>
+        <label for="adults">Adults-perRoom</label>
+        <select required name="adults" id="adults" >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <input type="submit" value="Search">
+</form>
+</div>

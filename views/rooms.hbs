@@ -1,0 +1,19 @@
+<div class="client-description">
+    <h2 class="header">Client Stay date<h2>
+    <p>Checkin Date: {{checkin}} </p>
+    <p>Checkout Date: {{checkout}} </p>
+    <p>Adults: {{adults}} </p>
+</div>
+
+<div class="rooms-available">
+    {{#each rooms}}
+    <div class="rooms">
+        <h3>{{this.name}}</h3>
+        <div class="img"></div>
+        <p>{{this.available}}</p>
+        <p>{{this.bed}}</p>
+        <p>{{this.price}}</p>
+    </div>
+    {{/each}}
+</div>
+
