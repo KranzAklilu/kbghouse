@@ -8,11 +8,20 @@
 <div class="rooms-available">
     {{#each rooms}}
     <div class="rooms">
-        <h3>{{this.name}}</h3>
+        {{#each this}}
+        <h3>{{this.name}}<h3>
+            {{/each}}
         <div class="img"></div>
+        {{#each this}}
         <p>{{this.available}}</p>
+        {{/each}}
+        {{#each this}}
         <p>{{this.bed}}</p>
+        {{/each}}
+        {{#each this}}
         <p>{{this.price}}</p>
+        {{/each}}
+        <input type="button" value="add to cart" id="addcart">
     </div>
     {{/each}}
 </div>

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Client = require("../model/Client");
+const Rooms = require("../model/Rooms");
 
 router.get("/", async (req, res) => {
   res.status(200).render("index", {
@@ -25,9 +26,13 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/rooms:id", async (req, res) => {
-  const rooms = require("../public/js/rooms");
+  const rooms = await Rooms.find({});
+  const room05 = await Rooms.findOne({ name: "room05" });
+  room05.kind = "presidential suite";
+  await room05.save();
   try {
     const client = await Client.findById(req.params.id);
+
     res.render("rooms", {
       styles: "rooms.css",
       checkin: client.checkin,
