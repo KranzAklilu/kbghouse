@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server"
+    "dev": "nodemon server",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "10.19.0"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -14,5 +18,15 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KranzAklilu/node-test.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/KranzAklilu/node-test/issues"
+  },
+  "homepage": "https://github.com/KranzAklilu/node-test#readme",
+  "description": ""
 }
