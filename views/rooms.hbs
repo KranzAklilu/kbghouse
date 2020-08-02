@@ -6,7 +6,7 @@
 </div>
 
 <div class="rooms-available">
-    {{#each rooms}}
+    {{#each rooms }}
     <div class="rooms">
         {{#each this}}
         <h3>{{this.name}}<h3>
@@ -19,9 +19,12 @@
         <p>{{this.bed}}</p>
         {{/each}}
         {{#each this}}
+        <p>{{this.kind}}</p>
+        {{/each}}
+        {{#each this}}
         <p>{{this.price}}</p>
         {{/each}}
-        <input type="button" value="add to cart" id="addcart">
+        <input type="button" value="add to cart" name="in" id="addcart">
     </div>
     {{/each}}
 </div>

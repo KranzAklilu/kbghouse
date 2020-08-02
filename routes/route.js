@@ -24,15 +24,21 @@ router.post("/", async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-
-router.get("/rooms:id", async (req, res) => {
+router.get("/rooms", async (req, res) => {
   const rooms = await Rooms.find({});
-  const room05 = await Rooms.findOne({ name: "room05" });
-  room05.kind = "presidential suite";
-  await room05.save();
+  try {
+    res.render("rooms", {
+      styles: "rooms.css",
+      rooms,
+    });
+  } catch (err) {
+    res.status(404).json({ message: err.message });
+  }
+});
+router.get("/rooms:id", async (req, res) => {
+  const rooms = await Rooms.find({ available: true });
   try {
     const client = await Client.findById(req.params.id);
-
     res.render("rooms", {
       styles: "rooms.css",
       checkin: client.checkin,
@@ -41,7 +47,7 @@ router.get("/rooms:id", async (req, res) => {
       rooms,
     });
   } catch (err) {
-    res.status(404).redirect("/");
+    res.status(404);
   }
 });
 

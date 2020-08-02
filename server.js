@@ -1,15 +1,16 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+const path = require("path");
 const exphbs = require("express-handlebars");
-const clientRouter = require("./routes/booking");
+const router = require("./routes/route");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -20,13 +21,7 @@ db.once("open", () => console.log("Connected To A DataBase"));
 app.set("view engine", "hbs");
 app.engine("hbs", exphbs({ extname: ".hbs" }));
 
-app.use("/", clientRouter);
-
-// app.get("/rooms", (req, res) => {
-//   res.render("rooms", {
-//     styles: "rooms.css",
-//   });
-// });
+app.use("/", router);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server Started At Port ${PORT}`));
