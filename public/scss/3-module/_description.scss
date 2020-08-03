@@ -1,0 +1,124 @@
+.description {
+  &__hr {
+    color: $primary;
+    width: 25%;
+    margin: -10px auto 30px;
+  }
+  &__menu {
+    width: 100%;
+    height: 55px;
+  }
+  &__list {
+    @include flex(row, space-evenly, center);
+    height: 100%;
+  }
+  &__link {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #000;
+    text-transform: capitalize;
+    &--active {
+      color: $primary;
+      font-weight: 600;
+    }
+  }
+
+  &__card {
+    display: none;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto 100px;
+    background-color: $primary;
+    color: #fff;
+    &--active {
+      display: block;
+    }
+  }
+  &__header {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 50px 0 0;
+    background-color: #fff;
+    color: #000000;
+    padding-bottom: 30px;
+  }
+  &__parg {
+    text-align: left;
+    margin: 20px 25px 30px;
+    line-height: 1.6;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+  }
+  &__btn {
+    padding: 13px;
+    margin: 0 auto 30px;
+  }
+  &__img {
+    width: 100%;
+  }
+}
+@media (min-width: 750px) {
+  .description {
+    &__hr {
+      display: none;
+    }
+    &__menu {
+      margin-bottom: 80px;
+      background-color: #fff;
+    }
+    &__link {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #000;
+      text-transform: capitalize;
+      &--active {
+        font-weight: 700;
+        color: $primary;
+      }
+    }
+    &__card {
+      height: 300px;
+      margin: 30px auto 0;
+      max-width: 1100px;
+      text-align: right;
+      display: none;
+      &--active {
+        width: 100%;
+        @include flex(column, flex-start, center);
+        flex-wrap: wrap;
+      }
+    }
+    &__text-container {
+      padding: 70px 50px 0;
+      min-height: 300px;
+      width: 60%;
+    }
+    &__header {
+      position: relative;
+      right: 55%;
+      bottom: 20px;
+      order: 2;
+      max-width: 300px;
+      text-align: left;
+      color: #fff;
+      font-weight: 600;
+      background-color: unset;
+    }
+    &__parg {
+      font-size: 1rem;
+      margin: 30px 20px 30px 0;
+    }
+    &__img {
+      height: 300px;
+      width: 40%;
+      object-fit: cover;
+    }
+    &__btn {
+      padding: 10px 30px;
+      margin: 50px 30px 10px;
+    }
+  }
+}

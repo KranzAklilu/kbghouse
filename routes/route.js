@@ -4,9 +4,7 @@ const Client = require("../model/Client");
 const Rooms = require("../model/Rooms");
 
 router.get("/", async (req, res) => {
-  res.status(200).render("index", {
-    styles: "index.css",
-  });
+  res.render("index");
 });
 // router.get("/:id", getClient, (req, res) => {
 //   res.json(res.client);
@@ -28,7 +26,6 @@ router.get("/rooms", async (req, res) => {
   const rooms = await Rooms.find({});
   try {
     res.render("rooms", {
-      styles: "rooms.css",
       rooms,
     });
   } catch (err) {
@@ -40,14 +37,13 @@ router.get("/rooms:id", async (req, res) => {
   try {
     const client = await Client.findById(req.params.id);
     res.render("rooms", {
-      styles: "rooms.css",
       checkin: client.checkin,
       checkout: client.checkout,
       adults: client.adults,
       rooms,
     });
   } catch (err) {
-    res.status(404);
+    res.status(404).json({ message: err.message });
   }
 });
 

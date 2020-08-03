@@ -1,22 +1,287 @@
-<div id="App">
-<form action="/" method="post">
-    <div>
-        <label for="checkin">Check-In</label>
-        <input required type="date" name="checkin" value="{{client.checkin}}" id="checkin">
-    </div><div>
-        <label for="checkout">Check-Out</label>
-        <input required type="date" name="checkout" value="{{client.checkout}}" id="checkout">
-    </div><div>
-        <label for="adults">Adults-perRoom</label>
-        <select required name="adults" id="adults" >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </div>
-    <input type="submit" value="Search">
-</form>
-<a href="/rooms">Visit Rooms</a>
-</div>
+      <section class="top">
+        <div class="top__phone">
+          <div class="phone1">
+            <i class="fa fa-phone"></i>
+            <a class="top__call">+251 911 213134</a>
+          </div>
+          <div class="phone2">
+            <i class="fas fa-phone"></i>
+            <a class="top__call">+251 911 213118</a>
+          </div>
+        </div>
+        <div class="top__social">
+          <ul class="top__list">
+            <li>
+              <a href="" class="top__link"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="" class="top__link"
+                ><i class="fab fa-telegram-plane"></i
+              ></a>
+            </li>
+            <li>
+              <a href="" class="top__link"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="" class="top__link"
+                ><i class="fab fa-google-plus-g"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <header class="header">
+        <img class="logo" src="assets/logo.png" alt="" />
+        <div class="hamburger">
+          <div class="hamburger__line"></div>
+          <div class="hamburger__line"></div>
+          <div class="hamburger__line"></div>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li><a href="" class="nav__link">home</a></li>
+            <li><a href="" class="nav__link">gallery</a></li>
+            <li><a href="" class="nav__link">accomodations</a></li>
+            <li><a href="" class="nav__link">amenities</a></li>
+            <li><a href="" class="nav__link">contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="landing-page">
+          <div class="landing-page__img-container">
+            <img
+              class="landing-page__img landing-page__img--active"
+              src="./assets/keb_building.jpg"
+              alt="Building"
+            />
+            <img
+              class="landing-page__img"
+              src="./assets/kebron-guest-house.jpg"
+              alt="Guest House"
+            /><img
+              class="landing-page__img"
+              src="./assets/kghroomview.jpg"
+              alt="Room View"
+            />
+          </div>
+
+          <div class="landing-page__icon">
+            <i class="fas fa-chevron-left left"></i>
+            <i class="fas fa-chevron-right right"></i>
+          </div>
+        </section>
+        <section class="booking">
+          <h1 class="booking__header">book online now</h1>
+          <form action="/" method="POST" class="booking__form">
+            <div class="booking__check">
+              <label for="check-in" class="booking__label" >check-in date:</label>
+              <input
+                type="date"
+                name="checkin"
+                id="checkin"
+                class="booking__input"
+                placeholder="22/11/2020"
+                required
+              />
+            </div>
+            <div class="booking__check">
+              <label for="check-out" class="booking__label">check-out date:</label>
+              <input 
+                type="date"
+                name="checkout"
+                id="check-out"
+                class="booking__input"
+                placeholder="22/11/2020"
+                required
+              />
+            </div>
+            <div class="booking__select">
+              <label for="adults-room" class="booking__label" >adults per room:</label>
+              <select class="adults-room" id="adults-room" name="adults" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <input type="submit" class="primary-btn booking__link" value="Search">
+          </form>
+        </section>
+
+        <section class="description">
+          <hr class="description__hr" />
+          <div class="description__menu">
+            <ul class="description__list">
+              <li>
+                <a href="" class="description__link" data-id="1"
+                  >restaurant serving <br />delicitous foods</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="description__link description__link--active"
+                  data-id="2"
+                  >stunning rooms</a
+                >
+              </li>
+              <li>
+                <a href="" class="description__link" data-id="3"
+                  >gym + steam +<br />
+                  massage</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="description__card" data-id="1">
+            <h1 class="description__header">
+              restaurant serving delicitous foods
+            </h1>
+            <img
+              class="description__img"
+              src="./assets/kghroomview.jpg"
+              alt=""
+            />
+            <div class="description__text-container">
+              <p class="description__parg">
+                Relax in our delightful cuisine infused with organic ingredients
+                and prepared by expert chefs. We are providing a wide array of
+                fine dining selections. offering spectacular options from every
+                turn in a relaxing and cozy atmosphere.
+              </p>
+              <a href="" class="primary-btn description__btn">Explore</a>
+            </div>
+          </div>
+          <div class="description__card description__card--active" data-id="2">
+            <h1 class="description__header">stunning rooms</h1>
+            <img
+              class="description__img"
+              src="./assets/kghroomview.jpg"
+              alt=""
+            />
+            <div class="description__text-container">
+              <p class="description__parg">
+                Whether you are single or couple , we have full equipment that
+                you need to stay healthy and fit; plus steam and massage. Our
+                friendly and professional staff is here to assist you make your
+                workout experience perfect..
+              </p>
+              <a href="" class="primary-btn description__btn">Explore</a>
+            </div>
+          </div>
+          <div class="description__card" data-id="3">
+            <h1 class="description__header">gym + steam + massage</h1>
+            <img
+              class="description__img"
+              src="./assets/kghroomview.jpg"
+              alt=""
+            />
+            <div class="description__text-container">
+              <p class="description__parg">
+                Decorated with stunning furniture, Kebron Guest House, offers
+                visitors a warm and cozy environment. Its modern style is
+                inviting and comfortable. Each room has its own unique quality
+                and is matched with vibrant colors.
+              </p>
+              <a href="" class="primary-btn description__btn">Explore</a>
+            </div>
+          </div>
+        </section>
+        <section class="testimonial">
+          <h1 class="testimonial__header">satisfied customers</h1>
+          <div class="card-container">
+            <div class="testimonial__card">
+              <p class="testimonial__parg">
+                <span class="testimonial__quote">"</span> I have stayed for 6
+                days in that hotel. The stay is beyond my expectations.
+                <span class="testimonial__quote">“</span>
+              </p>
+              <p class="testimonial__speaker">-sridhab bangalore</p>
+            </div>
+            <div class="testimonial__card">
+              <p class="testimonial__parg">
+                <span class="testimonial__quote">“</span> This is the third time
+                that I've stayed at the Kebron Guest house -- and I know I'll be
+                back again! <span class="testimonial__quote">“</span>
+              </p>
+              <p class="testimonial__speaker">-crcooper M, vermon</p>
+            </div>
+            <div class="testimonial__card">
+              <p class="testimonial__parg">
+                <span class="testimonial__quote">“</span> The staff at the guess
+                house made you feel welcome and were very helpful in every way
+                they could. <span class="testimonial__quote">“</span>
+              </p>
+              <p class="testimonial__speaker">-Sao D Kuwait</p>
+            </div>
+            <div class="testimonial__card">
+              <p class="testimonial__parg">
+                <span class="testimonial__quote">“</span> Kebron is a fantastic
+                guesthouse. The rooms are clean and comfortable, the staff is
+                delightful, kind, and helpful, and the food is great.
+                <span class="testimonial__quote">“</span>
+              </p>
+              <p class="testimonial__speaker">-Toledo, Ohio</p>
+            </div>
+          </div>
+        </section>
+        <section class="gallery">
+          <div class="gallery__top-section">
+            <h1 class="gallery__header">a glance from the rich gallery</h1>
+            <p class="gallery__parg">
+              browse our photo gallery to experience the elegance and greatness
+              of out guest house
+            </p>
+            <div class="gallery__slider">
+              <i class="fas fa-caret-left"></i>
+              <i class="fas fa-caret-right"></i>
+            </div>
+            <a href="#" class="primary-btn gallery__link">Explore</a>
+          </div>
+          <div class="gallery__bottom-section">
+            <div class="gallery__img">
+              <img src="./assets/kebron-guest-house.jpg" alt="Room View" />
+              <img src="./assets/kghcommonarea.jpg" alt="Common Area" />
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="social">
+          <ul class="footer__list">
+            <li>
+              <a href="" class="footer__link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+            </li>
+            <li>
+              <a href="" class="footer__link"
+                ><i class="fab fa-telegram-plane"></i
+              ></a>
+            </li>
+            <li>
+              <a href="" class="footer__link"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="" class="footer__link"
+                ><i class="fab fa-google-plus-g"></i
+              ></a>
+            </li>
+            <li>
+              <a href="" class="footer__link"><i class="fab fa-flickr"></i></a>
+            </li>
+            <li>
+              <a href="" class="footer__link"
+                ><i class="fab fa-tripadvisor"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <p class="footer__parg">Powered By endubis, Hosted By endubis HOST</p>
+        <p class="footer__copyright">
+          Copyright &copy; 2020 KEBRON GUEST HOUSE,
+        </p>
+      </footer>

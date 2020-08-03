@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server",
-    "start": "node server.js"
+    "nodemon": "nodemon server",
+    "dev": "yarn nodemon & yarn scss",
+    "start": "node server.js",
+    "scss": "node-sass --watch public/scss/main.scss -o public/css/main.css"
   },
   "engines": {
     "node": "10.19.0",
@@ -15,7 +17,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
-    "mongoose": "^5.9.26"
+    "mongoose": "^5.9.26",
+    "node-sass": "^4.14.1",
+    "normalize-scss": "^7.0.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
