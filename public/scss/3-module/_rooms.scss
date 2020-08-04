@@ -6,6 +6,7 @@
       width: 100%;
       object-fit: cover;
     }
+
     &__header {
       text-transform: uppercase;
       font-size: 24px;
@@ -29,6 +30,30 @@
     &__link {
       text-transform: uppercase;
       margin-bottom: 20px;
+    }
+  }
+  @media (min-width: 750px) {
+    .landing-page {
+      &__img {
+        height: 75vh;
+        width: 50%;
+      }
+      &__header {
+        margin: 100px 0 70px;
+      }
+      &__link-container {
+        width: 75%;
+        margin: 70px auto 0;
+        @include flex(row-reverse, center, center);
+        :first-child {
+          margin: 0 0 0 40px;
+          width: 50%;
+        }
+      }
+      &__link {
+        margin: 0;
+        width: 30%;
+      }
     }
   }
   .rooms-container {
@@ -68,8 +93,32 @@
       font-size: 14px;
     }
     &__link {
+      display: inline-block;
       margin: 40px 0 50px;
       background-color: $primary;
+    }
+  }
+  @media (min-width: 750px) {
+    .rooms-container {
+      &__filter {
+        max-width: 1250px;
+      }
+      &__wrapper {
+        margin-top: 40px;
+        max-width: 1250px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+      &__room {
+        margin-bottom: 0px;
+      }
+      &__img {
+        height: 200px;
+      }
+      &__header {
+        margin: 40px;
+      }
     }
   }
 }
