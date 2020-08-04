@@ -58,7 +58,9 @@
       margin: auto;
       margin-top: 20px;
     }
-
+    input {
+      box-shadow: none;
+    }
     &__link {
       margin: 0;
     }

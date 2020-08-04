@@ -1,31 +1,35 @@
-<div class="client-description">
-    <h2 class="header">Client Stay date<h2>
-    <p>Checkin Date: {{checkin}} </p>
-    <p>Checkout Date: {{checkout}} </p>
-    <p>Adults: {{adults}} </p>
-</div>
-
-<div class="rooms-available">
-{{#each rooms }}
-    <div class="rooms">
-        {{#each this}}
-        <h3>{{this.name}}<h3>
-            {{/each}}
-        <div class="img"></div>
-        {{#each this}}
-        <p>{{this.available}}</p>
-        {{/each}}
-        {{#each this}}
-        <p>{{this.bed}}</p>
-        {{/each}}
-        {{#each this}}
-        <p>{{this.kind}}</p>
-        {{/each}}
-        {{#each this}}
-        <p>{{this.price}}</p>
-        {{/each}}
-        <input type="button" value="add to cart" name="in" id="addcart">
-    </div>
-    {{/each}}
-</div>
-
+<main class="rooms-page">
+    <section class="landing__page">
+        <img src="/assets/KBG4.jpg" class="landing-page__img" alt="" srcset="">
+        <h1 class="landing-page__header">rooms</h1>
+        <p class="landing-page__parg">Our rooms are where guests can relax and unwind, whilst enjoying the peacefulness of this quiet set in Ethiopia Addis Ababa city.</p>
+        <p class="landing-page__parg">quality is guaranteed</p>
+        <div class="landing-page__link-container">
+            <a href="" class="primary-btn landing-page__link">Book Now</a>
+            <a href="" class="primary-btn landing-page__link">Contact</a>
+        </div>
+    </section>
+    <section class="rooms-container">
+        <div class="rooms-container__filter">
+            <a class="rooms-container__btn" href="">View All</a>
+        </div>
+        <div class="rooms-container__wrapper">
+            <div class="rooms-container__room">
+                <img class="rooms-container__img" src="/assets/KBG4.jpg" alt="">
+                <h3 class="rooms-container__header">Deluxe room</h3>
+                <p class="rooms-container__parg">location: 3RD  floor</p>
+                <p class="rooms-container__parg">Bed Type: King or two Double beds</p>
+                <p class="rooms-container__parg">Room Occupancy: 2 guests</p>
+                <a href="" class="primary-btn rooms-container__link">Book Now</a>
+            </div>
+            <div class="rooms-container__room">
+                <img class="rooms-container__img" src="/assets/KBG4.jpg" alt="">
+                <h3 class="rooms-container__header">Deluxe room</h3>
+                <p class="rooms-container__parg">location: 3RD  floor</p>
+                <p class="rooms-container__parg">Bed Type: King or two Double beds</p>
+                <p class="rooms-container__parg">Room Occupancy: 2 guests</p>
+                <a href="" class="primary-btn rooms-container__link">Book Now</a>
+            </div>
+        </div>
+    </section>
+</main>

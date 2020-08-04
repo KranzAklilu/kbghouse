@@ -3,7 +3,7 @@ const router = express.Router();
 const Client = require("../model/Client");
 const Rooms = require("../model/Rooms");
 
-router.get("/", async (req, res) => {
+router.get("/", (req, res) => {
   res.render("index");
 });
 // router.get("/:id", getClient, (req, res) => {
@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
   });
   try {
     const newClient = await client.save();
-    res.redirect(`/rooms${newClient.id}`);
+    res.redirect(`/rooms/${newClient.id}`);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -32,7 +32,7 @@ router.get("/rooms", async (req, res) => {
     res.status(404).json({ message: err.message });
   }
 });
-router.get("/rooms:id", async (req, res) => {
+router.get("/rooms/:id", async (req, res) => {
   const rooms = await Rooms.find({ available: true });
   try {
     const client = await Client.findById(req.params.id);
@@ -44,6 +44,7 @@ router.get("/rooms:id", async (req, res) => {
     });
   } catch (err) {
     res.status(404).json({ message: err.message });
+    console.log(err);
   }
 });
 

@@ -1,12 +1,75 @@
-.rooms {
-  width: 100%;
-  height: 200px;
-  background-color: blueviolet;
-  color: brown;
-  h3 {
-    font-size: 7px;
+.rooms-page {
+  .landing-page {
+    &__img {
+      display: block;
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+    }
+    &__header {
+      text-transform: uppercase;
+      font-size: 24px;
+      text-align: center;
+      margin: 40px 0 50px;
+    }
+    &__parg {
+      width: 75%;
+      margin: auto;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: capitalize;
+    }
+    &__link-container {
+      text-align: center;
+      :first-child {
+        margin-top: 30px;
+        background-color: $primary;
+      }
+    }
+    &__link {
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
   }
-  p {
-    color: blueviolet;
+  .rooms-container {
+    &__filter {
+      padding: 30px 0;
+      width: 85%;
+      margin: auto;
+    }
+    &__btn {
+      color: #000;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    &__wrapper {
+      width: 85%;
+      margin: auto;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    &__room {
+      margin-bottom: 50px;
+      background-color: $light;
+    }
+    &__img {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+    }
+    &__header {
+      margin: 30px 0;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    &__parg {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+    &__link {
+      margin: 40px 0 50px;
+      background-color: $primary;
+    }
   }
 }
