@@ -6,9 +6,12 @@ const view = {
   landingPageImgContainer: document.querySelector(
     ".landing-page__img-container"
   ),
-  caerousel: document.querySelectorAll(".fa-circle"),
-
-  img: document.querySelectorAll(".landing-page__img"),
+  checkIn: document.querySelector("#check-in"),
+  checkOut: document.querySelector("#check-out"),
+  galleryImgContainer: document.querySelector(".gallery__img-container"),
+  galleryIcons: document.querySelector(".gallery__slider"),
+  galleryImg: document.querySelectorAll(".gallery__img"),
+  landingImg: document.querySelectorAll(".landing-page__img"),
   landingPageIcon: document.querySelector(".landing-page__icon"),
   descLink: document.querySelectorAll(".description__link"),
   card: document.querySelectorAll(".description__card"),
@@ -28,9 +31,15 @@ view.hamburger.addEventListener("click", () => {
 
   view.nav.classList.toggle("nav--active");
 });
+view.checkIn.addEventListener("click", () => {
+  view.checkIn.max = view.checkOut.value;
+});
+view.checkOut.addEventListener("click", () => {
+  view.checkOut.min = view.checkIn.value;
+});
+
 view.landingPageIcon.addEventListener("click", (e) => {
-  const img = [...view.img];
-  const caerousel = [...view.caerousel];
+  const img = [...view.landingImg];
   const activeImg = img.find((img) =>
     img.classList.contains("landing-page__img--active")
   );
@@ -48,6 +57,29 @@ view.landingPageIcon.addEventListener("click", (e) => {
       view.landingPageImgContainer.firstElementChild;
     current.classList.add("landing-page__img--active");
   }
+});
+view.galleryIcons.addEventListener("click", (e) => {
+  const img = [...view.galleryImg];
+  const activeImg = img.filter((img) =>
+    img.classList.contains("gallery__img--active")
+  );
+
+  if (e.target.classList.contains("left")) {
+    activeImg[0].classList.remove("gallery__img--active");
+    const available = img.filter(
+      (child) => !child.classList.contains("gallery__img--active")
+    );
+    activeImg.splice(0, 1);
+    available.push(activeImg[0]);
+    const firstChild = available[1];
+    firstChild.classList.add("gallery__img--active");
+    available.splice(0, 1);
+    activeImg.push(firstChild);
+  }
+  console.log(activeImg);
+  // const current =
+  //   activeImg[0].previousElementSibling ||
+  //   view.galleryImgContainer.lastElementChild;
 });
 view.descLink.forEach((link) => {
   link.addEventListener("click", (e) => {

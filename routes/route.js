@@ -26,6 +26,7 @@ router.get("/rooms", async (req, res) => {
   const rooms = await Rooms.find({});
   try {
     res.render("rooms", {
+      booked: false,
       rooms,
     });
   } catch (err) {
@@ -37,6 +38,7 @@ router.get("/rooms/:id", async (req, res) => {
   try {
     const client = await Client.findById(req.params.id);
     res.render("rooms", {
+      booked: true,
       checkin: client.checkin,
       checkout: client.checkout,
       adults: client.adults,
