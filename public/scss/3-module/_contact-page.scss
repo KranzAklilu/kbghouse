@@ -1,0 +1,56 @@
+.contact-page {
+  &__header {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__form {
+    margin: 50px auto;
+    width: 90%;
+    text-transform: capitalize;
+  }
+  &__form > div {
+    @include flex(column, flex-start, flex-start);
+    margin: 25px 0;
+  }
+  &__input {
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 100%;
+  }
+  &__select {
+    margin-top: 10px;
+    width: 100%;
+  }
+  &__btn-container {
+    width: 100%;
+    text-align: center;
+    :nth-child(1) {
+      margin-top: 40px;
+      background-color: $primary;
+    }
+  }
+  &__link {
+    margin: 10px auto;
+  }
+}
+@media (min-width: 750px) {
+  .contact-page {
+    &__form {
+      max-width: 1000px;
+      margin: 75px auto;
+    }
+    &__form > div {
+      @include flex(row, flex-start, center);
+      label {
+        width: 200px;
+      }
+    }
+    &__link {
+      max-width: 90%;
+      min-width: 250px;
+      margin: 40px auto;
+    }
+  }
+}

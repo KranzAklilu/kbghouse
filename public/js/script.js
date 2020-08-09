@@ -58,25 +58,41 @@ view.landingPageIcon.addEventListener("click", (e) => {
     current.classList.add("landing-page__img--active");
   }
 });
+const img = [...view.galleryImg];
+const allImgs = [];
+let num = 1;
+img.forEach((img) => {
+  allImgs.push(img);
+});
+allImgs.forEach((img) => {
+  img.dataset.id = num;
+  num++;
+});
+console.log(allImgs);
 view.galleryIcons.addEventListener("click", (e) => {
-  const img = [...view.galleryImg];
-  const activeImg = img.filter((img) =>
-    img.classList.contains("gallery__img--active")
-  );
-
   if (e.target.classList.contains("left")) {
-    activeImg[0].classList.remove("gallery__img--active");
-    const available = img.filter(
-      (child) => !child.classList.contains("gallery__img--active")
+    const first = allImgs[0];
+    console.log(first);
+    first.classList.remove("gallery__img--active");
+    allImgs.splice(0, 1);
+    allImgs.push(first);
+    const added = allImgs.find(
+      (img) => !img.classList.contains("gallery__img--active")
     );
-    activeImg.splice(0, 1);
-    available.push(activeImg[0]);
-    const firstChild = available[1];
-    firstChild.classList.add("gallery__img--active");
-    available.splice(0, 1);
-    activeImg.push(firstChild);
+    added.classList.add("gallery__img--active");
+  } else if (e.target.classList.contains("right")) {
+    const second = allImgs[1];
+    second.classList.remove("gallery__img--active");
+    allImgs.splice(1, 1);
+    allImgs.push(second);
+    allImgs.reverse();
+    const added = allImgs.find(
+      (img) => !img.classList.contains("gallery__img--active") && img != second
+    );
+    allImgs.splice(0, 0, added);
+    added.classList.add("gallery__img--active");
+    console.log(added);
   }
-  console.log(activeImg);
   // const current =
   //   activeImg[0].previousElementSibling ||
   //   view.galleryImgContainer.lastElementChild;

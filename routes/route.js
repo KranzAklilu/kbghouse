@@ -49,5 +49,14 @@ router.get("/rooms/:id", async (req, res) => {
     console.log(err);
   }
 });
+router.get("/gallery", (req, res) => {
+  res.render("gallery");
+});
+router.get("/amenities", (req, res) => {
+  res.render("amenities");
+});
+router.get("/contact", (req, res) => {
+  res.render("contact");
+});
 
 module.exports = router;

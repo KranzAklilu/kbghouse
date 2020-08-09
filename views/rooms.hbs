@@ -1,17 +1,11 @@
 <main class="rooms-page">
-    
-    <section class="room-landing-page">
-        <img src="/assets/KBG4.jpg" class="landing-page__img" alt="" srcset="">
-        <div class="landing-page__container">
-            <h1 class="landing-page__header">rooms</h1>
-            <p class="landing-page__parg">our rooms are where guests can relax and unwind, whilst enjoying the peacefulness of this quiet set in ethiopia addis ababa city.</p>
-            <p class="landing-page__parg">quality is guaranteed</p>
-            <div class="landing-page__link-container">
-                <a href="" class="primary-btn landing-page__link">book now</a>
-                <a href="" class="primary-btn landing-page__link">contact</a>
-            </div>
-        </div>
-    </section>
+    {{> includes/hero 
+    img = "KBG4.jpg"
+    header = "rooms"
+    parg = "our rooms are where guests can relax and unwind, whilst enjoying the peacefulness of this quiet set in ethiopia addis ababa city."
+    parg-below = "quality is guaranteed"
+
+   }}
     <section class="rooms-container">
         <div class="rooms-container__filter">
             {{#if booked}}
